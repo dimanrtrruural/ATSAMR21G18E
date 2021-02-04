@@ -66,15 +66,15 @@ void rtc_get_time(void)
 	YEAR_SEND = clock.bit.YEAR;		
 }
 
-void rtc_correct_second(void)
+void rtc_set_time(void)
 {
 	RTC->MODE2.CLOCK.reg =
-	RTC_MODE2_CLOCK_YEAR(YEAR_SEND) |
-	RTC_MODE2_CLOCK_MONTH(MONTH_LCD) |
-	RTC_MODE2_CLOCK_DAY(DAY_LCD) |
-	RTC_MODE2_CLOCK_HOUR(HOUR_LCD) |
-	RTC_MODE2_CLOCK_MINUTE(MINUTE_LCD) |
-	RTC_MODE2_CLOCK_SECOND(SECOND_LCD+CORRECT_SEC);
+	RTC_MODE2_CLOCK_YEAR(YEAR) | 
+	RTC_MODE2_CLOCK_MONTH(MONTH) |
+	RTC_MODE2_CLOCK_DAY(DAY) | 
+	RTC_MODE2_CLOCK_HOUR(HOUR) |
+	RTC_MODE2_CLOCK_MINUTE(MINUTE) |
+	RTC_MODE2_CLOCK_SECOND(SECOND);
 }
 
 int a, y, m;
@@ -88,8 +88,8 @@ void get_week(void)
 }
 void REAL_TIME_CLOCK(void)
 {	 
-	rtc_get_time();
-    get_week();
+  rtc_get_time();
+  get_week();
 }
 #endif
 
