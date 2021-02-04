@@ -13,7 +13,6 @@
 void rtc_init(void);
 void rtc_set_time(void);
 void rtc_get_time(void);
-//void rtc_task_handler(void);
 int16_t HOUR_LCD;
 int16_t MINUTE_LCD;
 int16_t SECOND_LCD;
@@ -23,8 +22,6 @@ int16_t YEAR_SEND;
 int16_t YEAR_LCD;
 int DAY_OF_WEEK_LCD;
 int8_t CORRECT_SEC;
-//extern uint8_t datatest;
-/*- Implementations ---------------------------------------------------------*/
 
 //-----------------------------------------------------------------------------
 void rtc_init(void)
